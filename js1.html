@@ -4,15 +4,36 @@
         <title>Console JS</title>
     </head>
     <body>
-        <div>
-            <button onclick="alerta()">Clique aqui! <3</button>
+        <div id="app">
+            <input id="entrada" type="text" name="nome">
+            <label id="ValorGasto">R$</label>
+            <button class="btn1"> Adiciona <3</button>
+            <button class="btn2"> Remove <3</button>
         </div>
         <script>
+            
+            var valorBtnAdd = document.querySelector('button.btn1');
+            var valorBtnRmv = document.querySelector('button.btn2');
+            var valorInput  = document.querySelector('input[name=nome]');
+            var valorProd   = document.querySelector("label[valorGasto]");
+            var verdinha    = "R$ ";
+            var cont        = 0;
+            var contAdd     = 0;
+            var contRmv     = 0;
 
-           function alerta(){
-               alert("Terceiro Commit! mais um teste @0@");
-           }
-
+            valorBtnAdd.onclick = function(){
+               contAdd = parseInt(valorInput.value);
+               cont   += contAdd;
+               alert(cont);
+               document.getElementById("ValorGasto").innerHTML = verdinha.concat(cont.toString());
+            }
+            valorBtnRmv.onclick = function(){
+               contRmv = parseInt(valorInput.value);
+               cont   -= contRmv;
+               alert(cont);
+               document.getElementById("ValorGasto").innerHTML = verdinha.concat(cont.toString());
+            }
+ 
         </script>
     </body>
 </html>
